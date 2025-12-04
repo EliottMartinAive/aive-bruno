@@ -1,0 +1,26 @@
+meta {
+  name: Viewer
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: {{HOST}}
+  body: graphql
+  auth: inherit
+}
+
+body:graphql {
+  query userPermiss {
+    viewer {
+      id
+      name
+      permissions
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
