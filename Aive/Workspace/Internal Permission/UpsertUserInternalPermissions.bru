@@ -11,8 +11,8 @@ post {
 }
 
 body:graphql {
-  mutation upsertUserInternalPermission($input: UpsertUserInternalPermissionInput!) {
-    upsertUserInternalPermission(
+  mutation upsertUserInternalPermissions($input: UpsertUserInternalPermissionsInput!) {
+    upsertUserInternalPermissions(
       input: $input
     )
   }
@@ -21,8 +21,8 @@ body:graphql {
 body:graphql:vars {
   {
     "input": {
-      "userId": "019326173df7302932e5ede834c1ac92",
-      "permission": "backoffice_delete"
+      "userId": "019326173df746ddfb7233c9f149f1e5",
+      "permissions": []
     }
   }
 }

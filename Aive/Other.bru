@@ -6,10 +6,81 @@ meta {
 
 post {
   url: {{HOST}}
-  body: none
+  body: graphql
   auth: inherit
+}
+
+body:graphql {
+  query getWorkspaceAssets($workspaceId: ID!) {
+    workspace(id: $workspaceId) {
+      images {
+        codec
+        createdAt
+        downloadUrl
+        format {
+          height
+          width
+          __typename
+        }
+        id
+        name
+        size
+        __typename
+      }
+      fonts {
+        createdAt
+        family
+        file
+        id
+        unicodeBlocks
+        variant
+        __typename
+      }
+      streams {
+        id
+        videoId
+        name
+        type
+        downloadUrl
+        duration
+        createdAt
+        video {
+          createdAt
+          downloadUrl
+          id
+          name
+          size
+          images {
+            downloadUrl
+            __typename
+          }
+          __typename
+        }
+        metadata {
+          audio {
+            codec
+            __typename
+          }
+          video {
+            codec
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+  }
+}
+
+body:graphql:vars {
+  {
+    "workspaceId":"019326173f5d98778494adda67596acb"
+  }
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }
