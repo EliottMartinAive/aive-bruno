@@ -1,0 +1,29 @@
+meta {
+  name: authMethods
+  type: graphql
+  seq: 1
+}
+
+post {
+  url: {{HOST}}
+  body: graphql
+  auth: inherit
+}
+
+body:graphql {
+  query authMethods {
+    authMethods {
+      id
+      method
+      oidcProvider
+      oidcProviderId
+      isSystem
+      createdAt
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,22 @@
+meta {
+  name: DeleteAuthMethod
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{WORKSPACE_API}}/deleteOidcAuthMethod
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": "1258b5295f4f4260a184e9d1b466ad58"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

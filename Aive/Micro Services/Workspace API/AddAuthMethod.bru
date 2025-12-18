@@ -1,0 +1,23 @@
+meta {
+  name: AddAuthMethod
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{WORKSPACE_API}}/createOidcAuthMethod
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "oidc_provider": "microsoft",
+    "oidc_provider_id": "ipg"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,32 @@
+meta {
+  name: createOidcAuthMethod
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: {{HOST}}
+  body: graphql
+  auth: inherit
+}
+
+body:graphql {
+  mutation createOidcAuthMethod($input: CreateOidcAuthMethodInput!) {
+    createOidcAuthMethod(input: $input)
+  }
+}
+
+body:graphql:vars {
+  {
+    "input": {
+      "oidcProvider": "microsoft",
+      "oidcProviderId": "bnp",
+      "isSystem": false
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
